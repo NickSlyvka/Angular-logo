@@ -6,7 +6,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { FontService } from '../../services/font.service';
+import { FontService } from 'src/app/services/font.service';
 
 @Component({
   selector: 'app-triangle',
