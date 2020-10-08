@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { FontService } from 'src/app/services/font.service';
+import { FontService } from '../../services/font.service';
 
 @Component({
   selector: 'app-rect',
