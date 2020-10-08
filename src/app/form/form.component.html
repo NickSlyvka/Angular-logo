@@ -1,0 +1,115 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 offset-md-3">
+      <div class="text-center">
+        <h1 *ngIf="!paramId">Create Logo</h1>
+        <h1 *ngIf="paramId">Edit Logo</h1>
+        <hr />
+      </div>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="text">Logo Text:</label>
+          <input
+            type="text"
+            id="text"
+            class="form-control"
+            formControlName="logoText"
+            placeholder="Enter Text"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="fonts">Logo Fonts:</label>
+          <select class="custom-select" formControlName="logoFont" id="fonts">
+            <option value="" disabled>Select Fonts</option>
+            <option *ngFor="let font of fonts" [ngValue]="font">
+              {{ font }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group text-center">
+          <h4>Select Figure:</h4>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="circle"
+              value="circle"
+              checked
+              formControlName="logoFigure"
+            />
+            <label class="form-check-label" for="circle"> Circle </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="rect"
+              value="rect"
+              formControlName="logoFigure"
+            />
+            <label class="form-check-label" for="rect"> Rect </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="triangle"
+              value="triangle"
+              formControlName="logoFigure"
+            />
+            <label class="form-check-label" for="triangle"> Triangle </label>
+          </div>
+          <hr />
+
+          <div [ngSwitch]="this.form.get('logoFigure').value" class="col-md">
+            <ng-template ngSwitchCase="rect"
+              ><app-rect
+                [text]="this.form.get('logoText').value"
+                [font]="this.form.get('logoFont').value"
+              ></app-rect
+            ></ng-template>
+            <ng-template ngSwitchCase="circle"
+              ><app-circle
+                [text]="this.form.get('logoText').value"
+                [font]="this.form.get('logoFont').value"
+              ></app-circle
+            ></ng-template>
+            <ng-template ngSwitchCase="triangle"
+              ><app-triangle
+                [text]="this.form.get('logoText').value"
+                [font]="this.form.get('logoFont').value"
+              ></app-triangle
+            ></ng-template>
+            <ng-template ngSwitchDefault>{{ logo.logoFigure }}</ng-template>
+          </div>
+          <hr />
+        </div>
+
+        <div class="text-center">
+          <button
+            type="submit"
+            class="btn btn-outline-primary mr-1"
+            [disabled]="form.invalid"
+            *ngIf="!paramId"
+          >
+            Create
+          </button>
+          <button
+            type="submit"
+            class="btn btn-outline-primary mr-1"
+            [disabled]="form.invalid"
+            *ngIf="paramId"
+          >
+            Save
+          </button>
+
+          <button class="btn btn-outline-info mr-1" routerLink="/logo">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

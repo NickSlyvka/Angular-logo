@@ -1,0 +1,37 @@
+<div class="container text-center">
+  <h1>Logo Details</h1>
+  <hr />
+  <div class="row">
+    <div class="col-sm">
+      <div [ngSwitch]="logo.logoFigure">
+        <ng-template ngSwitchCase="rect"
+          ><app-rect [text]="logo.logoText" [font]="logo.logoFont"></app-rect
+        ></ng-template>
+        <ng-template ngSwitchCase="circle"
+          ><app-circle
+            [text]="logo.logoText"
+            [font]="logo.logoFont"
+          ></app-circle
+        ></ng-template>
+        <ng-template ngSwitchCase="triangle"
+          ><app-triangle
+            [text]="logo.logoText"
+            [font]="logo.logoFont"
+          ></app-triangle
+        ></ng-template>
+        <ng-template ngSwitchDefault>{{ logo.logoFigure }}</ng-template>
+      </div>
+      <hr />
+    </div>
+  </div>
+  <div class="col-sm">
+    <a
+      [routerLink]="['/edit', logo.id]"
+      class="btn btn-outline-info mr-1 center-block ml-a"
+      >Edit</a
+    >
+    <a routerLink="/logo" class="btn btn-outline-primary mr-1 center-block"
+      >Back</a
+    >
+  </div>
+</div>

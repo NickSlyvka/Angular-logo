@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  padding-top: 50px;
+}
+
+.button {
+  margin-left: auto;
+}
+
+.figure {
+  font-size: 40px;
+  position: absolute;
+  margin-left: 100px;
+}

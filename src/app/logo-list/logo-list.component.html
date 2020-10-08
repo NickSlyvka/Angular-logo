@@ -1,0 +1,64 @@
+<div class="container">
+  <h1 class="text-center">Logo list</h1>
+  <table class="table">
+    <thead>
+      <tr class="text-center">
+        <th scope="col">#</th>
+        <th scope="col">Figure</th>
+        <th>
+          <a routerLink="/create" class="btn btn-primary btn-sm"
+            >Create new Logo</a
+          >
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngIf="logos" class="text-center">
+      <tr *ngFor="let logo of logos; let idx = index">
+        <th scope="row">{{ idx + 1 }}</th>
+        <td>
+          <div [ngSwitch]="logo.logoFigure" class="text-center">
+            <ng-template ngSwitchCase="rect"
+              ><app-rect
+                [text]="logo.logoText"
+                [font]="logo.logoFont"
+                (click)="onClick(logo.id)"
+                [ngStyle]="{ cursor: 'pointer' }"
+              ></app-rect
+            ></ng-template>
+            <ng-template ngSwitchCase="circle">
+              <app-circle
+                [text]="this.logo.logoText"
+                [font]="this.logo.logoFont"
+                (click)="onClick(logo.id)"
+                [ngStyle]="{ cursor: 'pointer' }"
+              ></app-circle
+            ></ng-template>
+            <ng-template ngSwitchCase="triangle"
+              ><app-triangle
+                [text]="this.logo.logoText"
+                [font]="this.logo.logoFont"
+                (click)="onClick(logo.id)"
+                [ngStyle]="{ cursor: 'pointer' }"
+              ></app-triangle
+            ></ng-template>
+            <ng-template ngSwitchDefault>{{ logo.logoFigure }}</ng-template>
+          </div>
+        </td>
+        <td>
+          <button
+            class="btn btn-outline-danger btn-sm mr-1"
+            (click)="onDelete(logo)"
+          >
+            Delete
+          </button>
+          <button
+            class="btn btn-outline-info btn-sm mr-1"
+            [routerLink]="['/edit', logo.id]"
+          >
+            Edit
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
