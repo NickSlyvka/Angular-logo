@@ -13,37 +13,19 @@ export class LogoService {
     {
       id: '1',
       logoText: 'Samsung',
-      logoFont: '',
+      logoFont: 'Anton',
       logoFigure: 'circle',
     },
     {
       id: '2',
       logoText: 'Phillips',
-      logoFont: '',
+      logoFont: 'Anton',
       logoFigure: 'rect',
     },
     {
       id: '3',
       logoText: 'Lg',
-      logoFont: '',
-      logoFigure: 'triangle',
-    },
-    {
-      id: '4',
-      logoText: 'Apple',
-      logoFont: '',
-      logoFigure: 'rect',
-    },
-    {
-      id: '5',
-      logoText: 'Xiaomi',
-      logoFont: '',
-      logoFigure: 'circle',
-    },
-    {
-      id: '6',
-      logoText: 'Oppo',
-      logoFont: '',
+      logoFont: 'Anton',
       logoFigure: 'triangle',
     },
   ];

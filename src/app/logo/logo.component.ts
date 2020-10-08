@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Logo } from '../models/logo.model';
-import { FontService } from '../services/font.service';
 import { LogoService } from '../services/logo.service';
 
 @Component({
@@ -14,7 +13,6 @@ export class LogoComponent implements OnInit {
 
   constructor(
     private logoService: LogoService,
-    private fontService: FontService,
     private route: ActivatedRoute
   ) {}
 
