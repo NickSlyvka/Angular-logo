@@ -29,14 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Demo
 
-import sdk from '@stackblitz/sdk'
-
-sdk.embedProjectId(
-  'elementOrId',
-  'angular-logo',
-  {
-    openFile: 'package.json',
-    hideDevTools: false,
-    devToolsHeight: 33,
-  }
-);
+https://stackblitz.com/edit/angular-logo?devtoolsheight=33&embed=1&file=package.json
