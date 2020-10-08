@@ -29,4 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Demo
 
-https://stackblitz.com/edit/angular-logo?devtoolsheight=33&embed=1&file=package.json
+https://stackblitz.com/github/RikzGT/Angular-logo
