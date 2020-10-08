@@ -15,7 +15,10 @@ import { FontService } from '../../services/font.service';
 })
 export class TriangleComponent implements OnInit, OnChanges {
   @ViewChild('triangle', { static: true }) triangle: ElementRef;
-  // Input Text & Font from Form for our Logo
+
+  /**
+   * Input Text & Font from Form for our Logo
+   */
   @Input() text: string;
   @Input() font: string;
 
@@ -30,7 +33,9 @@ export class TriangleComponent implements OnInit, OnChanges {
   }
 
   triangleCanvas() {
-    // Loading Google Font
+    /**
+     * Loading Google Font
+     */
     if (this.font) {
       this.fontService.getGoogleFonts(this.font);
     }

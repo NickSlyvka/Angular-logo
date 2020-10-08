@@ -12,20 +12,52 @@
           <input
             type="text"
             id="text"
+            [class.is-invalid]="
+              form.get('logoText').dirty && form.controls['logoText'].invalid
+            "
+            [class.is-valid]="form.get('logoText').valid"
             class="form-control"
             formControlName="logoText"
             placeholder="Enter Text"
+            maxlength="26"
           />
+          <div class="invalid-feedback">
+            <span *ngIf="form.controls['logoText'].hasError('required')"
+              >Please enter Text</span
+            >
+            <span *ngIf="form.controls['logoText'].hasError('minlength')"
+              >Min length:
+              {{ form.get("logoText").errors.minlength.requiredLength }}
+            </span>
+            <span *ngIf="form.controls['logoText'].hasError('maxlength')"
+              >Max length:
+              {{ form.get("logoText").errors.maxlength.requiredLength }}
+            </span>
+          </div>
         </div>
 
         <div class="form-group">
           <label for="fonts">Logo Fonts:</label>
-          <select class="custom-select" formControlName="logoFont" id="fonts">
+          <select
+            class="custom-select"
+            formControlName="logoFont"
+            id="fonts"
+            [class.is-invalid]="
+              form.get('logoFont').touched && form.get('logoFont').invalid
+            "
+            [class.is-valid]="form.get('logoFont').valid"
+          >
             <option value="" disabled>Select Fonts</option>
             <option *ngFor="let font of fonts" [ngValue]="font">
               {{ font }}
             </option>
           </select>
+          <div
+            class="invalid-feedback"
+            *ngIf="form.get('logoFont').touched && form.get('logoFont').invalid"
+          >
+            <span>Please select Font</span>
+          </div>
         </div>
 
         <div class="form-group text-center">

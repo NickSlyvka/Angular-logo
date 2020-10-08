@@ -15,7 +15,9 @@ import { FontService } from '../../services/font.service';
 })
 export class CircleComponent implements OnInit, OnChanges {
   @ViewChild('circle', { static: true }) circle: ElementRef;
-  // Input Text & Font from Form for our Logo
+  /**
+   * Input Text & Font from Form for our Logo
+   */
   @Input() text: string;
   @Input() font: string;
 
@@ -29,7 +31,9 @@ export class CircleComponent implements OnInit, OnChanges {
   }
 
   circleCanvas() {
-    // Loading Google Font
+    /**
+     * Loading Google Font
+     */
     if (this.font) {
       this.fontService.getGoogleFonts(this.font);
     }

@@ -8,7 +8,10 @@ import { FontService } from '../../services/font.service';
 })
 export class RectComponent implements OnInit {
   @ViewChild('rect', { static: true }) rect: ElementRef;
-  // Input Text & Font from Form for our Logo
+
+  /**
+   * Input Text & Font from Form for our Logo
+   */
   @Input() text: string;
   @Input() font: string;
 
@@ -23,7 +26,9 @@ export class RectComponent implements OnInit {
   }
 
   rectCanvas() {
-    // Loading Google Font
+    /**
+     * Loading Google Font
+     */
     if (this.font) {
       this.fontService.getGoogleFonts(this.font);
     }

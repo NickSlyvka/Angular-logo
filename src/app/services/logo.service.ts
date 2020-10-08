@@ -12,37 +12,37 @@ export class LogoService {
   public logos: Logo[] = [
     {
       id: '1',
-      logoText: 'Mercedes',
+      logoText: 'Samsung',
       logoFont: '',
       logoFigure: 'circle',
     },
     {
       id: '2',
-      logoText: 'Audi',
+      logoText: 'Phillips',
       logoFont: '',
       logoFigure: 'rect',
     },
     {
       id: '3',
-      logoText: 'BMW',
+      logoText: 'Lg',
       logoFont: '',
       logoFigure: 'triangle',
     },
     {
       id: '4',
-      logoText: 'Jaguar',
+      logoText: 'Apple',
       logoFont: '',
       logoFigure: 'rect',
     },
     {
       id: '5',
-      logoText: 'Renault',
+      logoText: 'Xiaomi',
       logoFont: '',
       logoFigure: 'circle',
     },
     {
       id: '6',
-      logoText: 'Peugeout',
+      logoText: 'Oppo',
       logoFont: '',
       logoFigure: 'triangle',
     },
