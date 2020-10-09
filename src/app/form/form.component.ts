@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterContentChecked,
+  AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  OnChanges,
+  OnInit,
+} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FontService } from '../services/font.service';
@@ -10,7 +18,7 @@ import * as uuid from 'uuid';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css'],
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, AfterContentChecked {
   public form: FormGroup;
 
   /**
@@ -55,6 +63,16 @@ export class FormComponent implements OnInit {
     if (!this.isCreateMode) {
       const editedLogo = this.logoService.getLogo(this.paramId);
       this.form.patchValue(editedLogo);
+    }
+  }
+
+  ngAfterContentChecked() {
+    /**
+     * Loading Google Font
+     */
+    const font = this.form.value.logoFont;
+    if (font) {
+      this.fontService.getGoogleFonts(font);
     }
   }
 

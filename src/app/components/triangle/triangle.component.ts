@@ -24,7 +24,7 @@ export class TriangleComponent implements OnInit, OnChanges {
 
   public ctx: CanvasRenderingContext2D;
 
-  constructor(private fontService: FontService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 
@@ -33,13 +33,6 @@ export class TriangleComponent implements OnInit, OnChanges {
   }
 
   triangleCanvas() {
-    /**
-     * Loading Google Font
-     */
-    if (this.font) {
-      this.fontService.getGoogleFonts(this.font);
-    }
-
     this.ctx = this.triangle.nativeElement.getContext('2d');
 
     this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);

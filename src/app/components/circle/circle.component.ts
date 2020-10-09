@@ -22,7 +22,7 @@ export class CircleComponent implements OnInit, OnChanges {
   @Input() font: string;
 
   public ctx: CanvasRenderingContext2D;
-  constructor(private fontService: FontService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 
@@ -31,12 +31,6 @@ export class CircleComponent implements OnInit, OnChanges {
   }
 
   circleCanvas() {
-    /**
-     * Loading Google Font
-     */
-    if (this.font) {
-      this.fontService.getGoogleFonts(this.font);
-    }
     this.ctx = this.circle.nativeElement.getContext('2d');
 
     this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);

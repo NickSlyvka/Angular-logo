@@ -17,7 +17,7 @@ export class RectComponent implements OnInit {
 
   public ctx: CanvasRenderingContext2D;
 
-  constructor(private fontService: FontService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 
@@ -26,12 +26,6 @@ export class RectComponent implements OnInit {
   }
 
   rectCanvas() {
-    /**
-     * Loading Google Font
-     */
-    if (this.font) {
-      this.fontService.getGoogleFonts(this.font);
-    }
     this.ctx = this.rect.nativeElement.getContext('2d');
 
     this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
